@@ -47,6 +47,13 @@ export default function MissionSections() {
       image: '/images/55.png',
       projectId: '2',
       description: 'Yenilikçi uzay taşımacılığı çözümleri'
+    }, 
+    {
+      id: 'Pulsar',
+      title: 'Pulsar',
+      image: '/images/roket.png',
+      projectId: '4',
+      description: 'Yenilikçi uzay taşımacılığı çözümleri'
     }
   ]
 
