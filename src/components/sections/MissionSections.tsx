@@ -5,14 +5,14 @@ import { ChevronDown, Facebook, Twitter, Instagram, Youtube } from 'lucide-react
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Navigation from '../UI/Navigation'
-import dynamic from 'next/dynamic'
+//import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 // Dynamic import of OrganizationChart
-const OrganizationChart = dynamic(() => import('./about/work-schema'), {
-  ssr: false
-})
+//const OrganizationChart = dynamic(() => import('./about/work-schema'), {
+ // ssr: false
+//})
 
 interface Section {
   id: string

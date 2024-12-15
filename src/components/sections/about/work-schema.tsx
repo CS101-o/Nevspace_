@@ -1,3 +1,4 @@
+//work-scema
 'use client'
 
 import React, { useState, useEffect } from 'react';
@@ -20,9 +21,6 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 interface TreeProps {
   children: React.ReactNode;
   label?: React.ReactNode;
-  lineWidth?: string;
-  lineColor?: string;
-  lineBorderRadius?: string;
 }
 
 interface OrganizationData {
@@ -156,7 +154,7 @@ const OrganizationTree: React.FC<OrganizationTreeProps> = ({ org, parent }) => {
     setCollapsed(!collapsed);
   };
 
-  const TreeComponent = parent ? TreeNode : (props: any) => (
+  const TreeComponent = parent ? TreeNode : (props: TreeProps) => (
     <Tree
       {...props}
       lineWidth="1px"
@@ -373,5 +371,5 @@ export default function OrganizationChart() {
       <ZoomControls zoom={zoom} setZoom={setZoom} />
     </section>
   );
-  
+
 }
