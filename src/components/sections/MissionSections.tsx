@@ -5,7 +5,15 @@ import { ChevronDown, Facebook, Twitter, Instagram, Youtube } from 'lucide-react
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Navigation from '../UI/Navigation'
-import Kadro from "../UI/kadro"
+import dynamic from 'next/dynamic'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+
+// Dynamic import of OrganizationChart
+const OrganizationChart = dynamic(() => import('./about/work-schema'), {
+  ssr: false
+})
+
 interface Section {
   id: string
   title: string
@@ -16,6 +24,7 @@ interface Section {
 
 export default function MissionSections() {
   const [hasMounted, setHasMounted] = useState(false)
+  const router = useRouter()
   
   const missions = [
     { path: '/missions/quasar', name: 'QUASAR' },
@@ -133,6 +142,10 @@ export default function MissionSections() {
     }
   }
 
+  const handleExamineClick = (sectionId: string) => {
+    router.push(`/missions/${sectionId.toLowerCase()}`)
+  }
+
   return (
     <div className="relative">
       {/* Mission Navigation */}
@@ -141,14 +154,14 @@ export default function MissionSections() {
           <div className="mission-nav flex items-center justify-center h-24">
             <div className="flex items-center space-x-8">
               {missions.map((mission) => (
-                <a
+                <Link
                   key={mission.name}
                   href={mission.path}
                   className="text-white hover:text-white/80 transition-colors duration-300 
                     text-sm tracking-wider px-4"
                 >
                   {mission.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -173,9 +186,7 @@ export default function MissionSections() {
         </div>
       </div>
 
-
       <Navigation />
-      
       
       <main className="relative">
         {hasMounted && sections.map((section, index) => (
@@ -202,31 +213,31 @@ export default function MissionSections() {
               ${index !== 0 ? 'opacity-0 translate-x-[-20px]' : ''}`}>
               
               {/* Top Content */}
-              <div className="max-w-xl  p-6 rounded-lg  mt-28 -ml-20">
+              <div className= "max-w-xl p-6 rounded-lg mt-28 -ml-20"> 
                 {index === 0 ? (
                   <div className="space-heading-wrapper">
-                  <div className="nevspace-badge inline-block text-sm font-light tracking-[0.4em] mb-6 text-gray-300
-                    border border-white/20 py-2 px-4 rounded-full backdrop-blur-sm
-                    hover:border-white/40 transition-all duration-300">
-                    Nevspace
+                    <div className="nevspace-badge inline-block text-sm font-light tracking-[0.4em] mb-6 text-gray-300
+                      border border-white/20 py-2 px-4 rounded-full backdrop-blur-sm
+                      hover:border-white/40 transition-all duration-300">
+                      Nevspace
+                    </div>
+                    <div className="overflow-hidden">
+                      <h1 className="space-heading">
+                        <span className="title-slide title-slide-delay-1 block text-[8vw] md:text-[60px] font-bold leading-[1.2] tracking-wide text-white drop-shadow-lg mb-2">
+                          MİLLİ
+                        </span>
+                        <span className="title-slide title-slide-delay-2 block text-[8vw] md:text-[60px] font-bold leading-[1.2] tracking-wide text-white drop-shadow-lg mb-2">
+                          TEKNOLOJİ
+                        </span>
+                        <span className="title-slide title-slide-delay-3 block text-[8vw] md:text-[60px] font-bold leading-[1.2] tracking-wide text-white drop-shadow-lg">
+                          HAMLESİ
+                        </span>
+                      </h1>
+                    </div>
+                    <div className="description-fade mt-8 text-lg tracking-wider text-gray-300 max-w-xl leading-relaxed">
+                      {section.description}
+                    </div>
                   </div>
-                  <div className="overflow-hidden">
-                    <h1 className="space-heading">
-                      <span className="title-slide title-slide-delay-1 block text-[8vw] md:text-[60px] font-bold leading-[1.2] tracking-wide text-white drop-shadow-lg mb-2">
-                        MİLLİ
-                      </span>
-                      <span className="title-slide title-slide-delay-2 block text-[8vw] md:text-[60px] font-bold leading-[1.2] tracking-wide text-white drop-shadow-lg mb-2">
-                        TEKNOLOJİ
-                      </span>
-                      <span className="title-slide title-slide-delay-3 block text-[8vw] md:text-[60px] font-bold leading-[1.2] tracking-wide text-white drop-shadow-lg">
-                        HAMLESİ
-                      </span>
-                    </h1>
-                  </div>
-                  <div className="description-fade mt-8 text-lg tracking-wider text-gray-300 max-w-xl leading-relaxed">
-                    {section.description}
-                  </div>
-                </div>
                 ) : (
                   <div>
                     <div className="text-sm tracking-[0.3em] text-gray-300 mb-4">
@@ -248,6 +259,7 @@ export default function MissionSections() {
                   Projeyi daha detaylı inceleyin ve bizimle iletişime geçin.
                 </div>
                 <button
+                  onClick={() => handleExamineClick(section.id)}
                   className={`examine-button group relative px-12 py-4 text-white border border-white/30
                     rounded-full overflow-hidden hover:border-white/60 transition-all duration-500
                     hover:bg-white/10 ${index === 0 ? '' : 'opacity-0 translate-y-5'}`}

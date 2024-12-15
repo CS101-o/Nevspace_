@@ -1,10 +1,9 @@
-// Navigation.tsx
 'use client'
 import { useState } from 'react'
-//import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, X, ChevronLeft } from 'lucide-react'
 import { gsap } from 'gsap'
+import { useRouter } from 'next/navigation'
 
 interface NavItem {
   label: string
@@ -15,21 +14,41 @@ interface NavItem {
 const Navigation = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
+  const router = useRouter()
+
+  const handleNavClick = (href: string, e?: React.MouseEvent) => {
+    e?.preventDefault()
+    
+    if (href.startsWith('#')) {
+      const element = document.getElementById(href.slice(1))
+      if (element) {
+        setIsSidebarOpen(false)
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }, 400)
+      }
+    } else {
+      setIsSidebarOpen(false)
+      setTimeout(() => {
+        router.push(href)
+      }, 400)
+    }
+  }
 
   const navItems: NavItem[] = [
     {
       label: 'HAKKIMIZDA',
-      href: '#hakkimizda',
+      href: '/about',
       subItems: [
         { label: 'Biz Kimiz', href: '/about/who-we-are' },
         { label: 'Çalışma Şeması', href: '/about/work-schema' }
       ]
     },
-    { label: 'MİSYONLAR', href: '#misyonlar' },
-    { label: 'PLATFORM', href: '#platform' },
-    { label: 'DUYURULAR', href: '#duyurular' },
-    { label: 'PAYDAŞLAR', href: '#paydaslar' },
-    { label: 'İLETİŞİM', href: '#iletisim' }
+    { label: 'MİSYONLAR', href: '/missions' },
+    { label: 'PLATFORM', href: '/platform' },
+    { label: 'DUYURULAR', href: '/announcements' },
+    { label: 'PAYDAŞLAR', href: '/partners' },
+    { label: 'İLETİŞİM', href: '/contact' }
   ]
 
   const toggleSidebar = () => {
@@ -54,7 +73,7 @@ const Navigation = () => {
 
   return (
     <>
-      {/* Right Sidebar */}
+      {/* Menu Button */}
       <button 
         onClick={toggleSidebar}
         className="fixed top-8 right-8 z-50 text-white hover:text-white/80 transition-colors p-2"
@@ -63,11 +82,13 @@ const Navigation = () => {
         <Menu size={24} />
       </button>
 
+      {/* Sidebar */}
       <div 
         className={`sidebar fixed top-0 right-0 h-full w-80 bg-black z-50 transform 
           translate-x-full transition-transform duration-300 ease-in-out`}
       >
         <div className="h-full flex flex-col">
+          {/* Close Button */}
           <div className="flex justify-end p-6">
             <button 
               onClick={toggleSidebar}
@@ -77,21 +98,24 @@ const Navigation = () => {
             </button>
           </div>
 
+          {/* Navigation Items */}
           <div className="flex-1 overflow-y-auto py-6">
             {navItems.map((item) => (
               <div key={item.label} className="px-8">
                 <div 
                   className="flex items-center justify-between py-3 cursor-pointer
                     text-white hover:text-white/80 transition-colors duration-300"
-                  onClick={() => item.subItems ? toggleSubmenu(item.label) : null}
+                  onClick={() => {
+                    if (item.subItems) {
+                      toggleSubmenu(item.label)
+                    } else {
+                      handleNavClick(item.href)
+                    }
+                  }}
                 >
-                  <Link 
-                    href={item.href}
-                    onClick={(e) => item.subItems && e.preventDefault()}
-                    className="text-sm tracking-wider"
-                  >
+                  <span className="text-sm tracking-wider">
                     {item.label}
-                  </Link>
+                  </span>
                   {item.subItems && (
                     <ChevronLeft 
                       size={20} 
@@ -101,18 +125,18 @@ const Navigation = () => {
                   )}
                 </div>
 
+                {/* Submenu Items */}
                 {item.subItems && activeSubmenu === item.label && (
                   <div className="mr-4 border-r border-white/10">
                     {item.subItems.map((subItem) => (
-                      <Link
+                      <button
                         key={subItem.label}
-                        href={subItem.href}
-                        className="block py-2 pr-4 text-right text-white/60 hover:text-white 
+                        onClick={(e) => handleNavClick(subItem.href, e)}
+                        className="block w-full text-right py-2 pr-4 text-white/60 hover:text-white 
                           transition-colors duration-300 text-sm tracking-wide"
-                        onClick={toggleSidebar}
                       >
                         {subItem.label}
-                      </Link>
+                      </button>
                     ))}
                   </div>
                 )}
@@ -120,6 +144,7 @@ const Navigation = () => {
             ))}
           </div>
 
+          {/* Footer */}
           <div className="p-8 border-t border-white/10">
             <div className="text-white/50 text-sm">
               © 2024 Nevspace. All rights reserved.
