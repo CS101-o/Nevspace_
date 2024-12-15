@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/nevspac2/public_html/
-    - /bin/cp -R next $DEPLOYPATH
+    - /bin/cp -R ./*  $DEPLOYPATH
