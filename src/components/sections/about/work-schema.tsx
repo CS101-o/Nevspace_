@@ -291,28 +291,36 @@ export default function OrganizationChart() {
   useEffect(() => {
     setIsMounted(true);
     
+    // Safe check for window and document
     if (typeof window !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-      
-      const animation = gsap.from(".org-chart-container", {
-        scrollTrigger: {
-          trigger: ".org-chart-container",
-          start: "top center",
-          end: "bottom center",
-        },
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: "power3.out"
-      });
+      // Import GSAP and ScrollTrigger dynamically
+      Promise.all([
+        import('gsap'),
+        import('gsap/dist/ScrollTrigger')
+      ]).then(([gsap, { ScrollTrigger }]) => {
+        gsap.default.registerPlugin(ScrollTrigger);
+        
+        const animation = gsap.default.from(".org-chart-container", {
+          scrollTrigger: {
+            trigger: ".org-chart-container",
+            start: "top center",
+            end: "bottom center",
+          },
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power3.out"
+        });
 
-      return () => {
-        if (animation.scrollTrigger) {
-          animation.scrollTrigger.kill();
-        }
-      };
+        return () => {
+          if (animation.scrollTrigger) {
+            animation.scrollTrigger.kill();
+          }
+        };
+      });
     }
   }, []);
+
 
   useEffect(() => {
     // Auto-adjust zoom based on window width on mount
