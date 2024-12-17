@@ -2,7 +2,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { Tree, TreeNode } from 'react-organizational-chart';
+import { Tree as OrgTree, TreeNode } from 'react-organizational-chart';
 import { Card, CardHeader } from '@/components/UI/card';
 import { Avatar } from '@/components/UI/avatar';
 import { Tooltip, TooltipProvider, TooltipTrigger, TooltipContent } from '@/components/UI/tooltip';
@@ -15,13 +15,11 @@ import {
   ZoomOut as ZoomOutIcon, 
   RotateCcw as ResetIcon 
 } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+//import gsap from 'gsap';
+//import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-interface TreeProps {
-  children: React.ReactNode;
-  label?: React.ReactNode;
-}
+
+
 
 interface OrganizationData {
   tradingName: string;
@@ -46,6 +44,9 @@ interface ZoomControlsProps {
   setZoom: React.Dispatch<React.SetStateAction<number>>;
 }
 
+// Custom Tree component wrapper to handle proper typing
+
+
 const ZoomControls: React.FC<ZoomControlsProps> = ({ zoom, setZoom }) => {
   const handleZoomIn = () => {
     setZoom((prev) => {
@@ -53,6 +54,7 @@ const ZoomControls: React.FC<ZoomControlsProps> = ({ zoom, setZoom }) => {
       return newZoom > 1.5 ? 1.5 : newZoom;
     });
   };
+
 
   const handleZoomOut = () => {
     setZoom((prev) => {
@@ -154,37 +156,41 @@ const OrganizationTree: React.FC<OrganizationTreeProps> = ({ org, parent }) => {
     setCollapsed(!collapsed);
   };
 
-  const TreeComponent = parent ? TreeNode : (props: TreeProps) => (
-    <Tree
-      {...props}
-      lineWidth="1px"
-      lineColor="rgba(255, 255, 255, 0.1)"
-      lineBorderRadius="12px"
-    >
-      {props.children}
-    </Tree>
+  type CommonTreeProps = {
+    label: React.ReactNode;
+    lineWidth?: string;
+    lineColor?: string;
+    lineBorderRadius?: string;
+    children?: React.ReactNode; // Add children as optional
+  };
+
+  const TreeComponent = parent ? TreeNode : OrgTree;
+
+  const nodeContent = (
+    <OrganizationNode
+      org={org}
+      onCollapse={handleCollapse}
+      collapsed={collapsed}
+    />
   );
 
-  return collapsed ? (
-    <TreeComponent
-      label={
-        <OrganizationNode
-          org={org}
-          onCollapse={handleCollapse}
-          collapsed={collapsed}
-        />
-      }
-    />
-  ) : (
-    <TreeComponent
-      label={
-        <OrganizationNode
-          org={org}
-          onCollapse={handleCollapse}
-          collapsed={collapsed}
-        />
-      }
-    >
+  const commonProps: CommonTreeProps = {
+    label: nodeContent,
+    lineWidth: "1px",
+    lineColor: "rgba(255, 255, 255, 0.1)",
+    lineBorderRadius: "12px"
+  };
+
+  if (collapsed) {
+    return (
+      <TreeComponent {...commonProps}>
+        {null} {/* Add empty children */}
+      </TreeComponent>
+    );
+  }
+
+  return (
+    <TreeComponent {...commonProps}>
       {org.organizationChildRelationship?.map((child, index) => (
         <OrganizationTree key={index} org={child} parent={org} />
       ))}

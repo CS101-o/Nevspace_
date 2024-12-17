@@ -1,6 +1,6 @@
 // app/about/work-schema/page.tsx
-import WorkSchema from '@/components/sections/about/work-schema'
+import ClientPage from './client'
 
-export default function Page() {
-  return <WorkSchema />
+export default function WorkSchemaPage() {
+  return <ClientPage />;
 }
