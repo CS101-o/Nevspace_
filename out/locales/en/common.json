@@ -1,0 +1,45 @@
+{
+    "nav": {
+      "about": "ABOUT US",
+      "missions": "MISSIONS",
+      "platform": "PLATFORM",
+      "announcements": "ANNOUNCEMENTS",
+      "partners": "PARTNERS",
+      "contact": "CONTACT"
+    },
+    "about": {
+      "whoWeAre": "Who We Are",
+      "workSchema": "Work Schema",
+      "vision": "Vision",
+      "team": "Team",
+      "advisors": "Advisory Board",
+      "identity": "Corporate Identity"
+    },
+    "missions": {
+      "quasar": "QUASAR",
+      "pranga": "PRANGA",
+      "pulsar": "PULSAR",
+      "toygar": "TOYGAR",
+      "operante": "OPERANTE",
+      "caelifera": "CAELIFERA",
+      "bitirim": "BITIRIM"
+    },
+    "platform": {
+      "what": "What is the Platform?",
+      "application": "Application Form"
+    },
+    "cta": {
+      "examine": "EXPLORE",
+      "scrollDown": "Scroll Down"
+    },
+    "footer": {
+      "copyright": "NEVSPACE © 2025",
+      "privacy": "PRIVACY POLICY",
+      "suppliers": "SUPPLIERS"
+    },
+    "heroSection": {
+      "nationalTech": "NATIONAL TECHNOLOGY INITIATIVE",
+      "description": "Turkey's pioneering venture in space technologies",
+      "cta": "Explore the project in more detail and get in touch with us."
+    }
+  }

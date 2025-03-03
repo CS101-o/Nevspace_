@@ -1,6 +1,6 @@
 'use client'
 
-import { use, useEffect, useRef, useState } from 'react'
+import {useEffect, useRef} from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, Facebook, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react'
@@ -32,7 +32,7 @@ export default function DesktopLayout({
 }: DesktopLayoutProps) {
   const navRef = useRef<HTMLDivElement>(null)
   const {scrollDirection, pastFirstPage} = useScrollDirection()
-  const [currentSection, setCurrentSection] = useState(0)
+  
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -46,7 +46,6 @@ export default function DesktopLayout({
           trigger: `#section-${index}`,
           start: 'top center',
           onEnter: () => {
-            setCurrentSection(index)
             gsap.to(`#section-${index} .content-wrapper`, {
               opacity: 1,
               x: 0,
@@ -60,9 +59,6 @@ export default function DesktopLayout({
             })
           },
           onLeaveBack: () => {
-            if (index > 0) {
-              setCurrentSection(index -1)
-            }
             gsap.to(`#section-${index} .content-wrapper`, {
               opacity: 0,
               x: -20,

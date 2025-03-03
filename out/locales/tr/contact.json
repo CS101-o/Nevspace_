@@ -1,0 +1,28 @@
+{
+    "form": {
+      "title": "Bize Mesaj Gönderin",
+      "name": "İsim",
+      "email": "E-posta",
+      "subject": "Konu",
+      "message": "Mesaj",
+      "send": "Mesaj Gönder",
+      "placeholder": {
+        "name": "İsminiz",
+        "email": "e-posta@örnek.com",
+        "subject": "Mesaj konusu",
+        "message": "Mesajınız..."
+      }
+    },
+    "offices": {
+      "turkey": "TÜRKİYE",
+      "uk": "BİRLEŞİK KRALLIK",
+      "mainOffice": "Merkez Ofis",
+      "istanbulOffice": "Nevspace - İTÜ",
+      "ukOffice": "UK Ofis",
+      "clickInfo": "İletişim bilgileri için mavi noktalara tıklayın"
+    },
+    "map": {
+      "loading": "Harita yükleniyor...",
+      "error": "Harita yüklenirken hata: "
+    }
+  }

@@ -1,0 +1,45 @@
+{
+    "nav": {
+      "about": "HAKKIMIZDA",
+      "missions": "MİSYONLAR",
+      "platform": "PLATFORM",
+      "announcements": "DUYURULAR",
+      "partners": "PAYDAŞLAR",
+      "contact": "İLETİŞİM"
+    },
+    "about": {
+      "whoWeAre": "Biz Kimiz",
+      "workSchema": "Çalışma Şeması",
+      "vision": "Vizyon",
+      "team": "Kadro",
+      "advisors": "Danışmanlar Kurulu",
+      "identity": "Kurumsal Kimlik"
+    },
+    "missions": {
+      "quasar": "QUASAR",
+      "pranga": "PRANGA",
+      "pulsar": "PULSAR",
+      "toygar": "TOYGAR",
+      "operante": "OPERANTE",
+      "caelifera": "CAELIFERA",
+      "bitirim": "BİTİRİM"
+    },
+    "platform": {
+      "what": "Platform Nedir?",
+      "application": "Başvuru Formu"
+    },
+    "cta": {
+      "examine": "İNCELE",
+      "scrollDown": "Aşağı Kaydır"
+    },
+    "footer": {
+      "copyright": "NEVSPACE © 2025",
+      "privacy": "GİZLİLİK POLİTİKASI",
+      "suppliers": "TEDARİKÇİLER"
+    },
+    "heroSection": {
+      "nationalTech": "MİLLİ TEKNOLOJİ HAMLESİ",
+      "description": "Türkiye'nin uzay teknolojileri alanındaki öncü girişimi",
+      "cta": "Projeyi daha detaylı inceleyin ve bizimle iletişime geçin."
+    }
+  }

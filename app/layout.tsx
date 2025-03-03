@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-
+import './rtl.css' // Add RTL styles
+import { I18nProvider } from '../src/components/i18n/I18nProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,9 +16,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Note: We can't dynamically set html attributes based on client state here
+  // because this is a Server Component, so we'll do that in the I18nProvider
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="tr">
+      <body className={inter.className}>
+        <I18nProvider>
+          {children}
+        </I18nProvider>
+      </body>
     </html>
   )
 }

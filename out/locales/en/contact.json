@@ -1,0 +1,28 @@
+{
+    "form": {
+      "title": "Send us a Message",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "placeholder": {
+        "name": "Your name",
+        "email": "your.email@example.com",
+        "subject": "Message subject",
+        "message": "Your message..."
+      }
+    },
+    "offices": {
+      "turkey": "TURKEY",
+      "uk": "UNITED KINGDOM",
+      "mainOffice": "Main Office",
+      "istanbulOffice": "Nevspace - ITU",
+      "ukOffice": "UK Office",
+      "clickInfo": "Click blue dots for contact info"
+    },
+    "map": {
+      "loading": "Loading map...",
+      "error": "Error loading map: "
+    }
+  }

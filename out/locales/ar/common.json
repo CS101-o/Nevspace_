@@ -1,0 +1,45 @@
+{
+    "nav": {
+      "about": "من نحن",
+      "missions": "المهمات",
+      "platform": "المنصة",
+      "announcements": "الإعلانات",
+      "partners": "الشركاء",
+      "contact": "اتصل بنا"
+    },
+    "about": {
+      "whoWeAre": "من نحن",
+      "workSchema": "مخطط العمل",
+      "vision": "الرؤية",
+      "team": "الفريق",
+      "advisors": "المجلس الاستشاري",
+      "identity": "الهوية المؤسسية"
+    },
+    "missions": {
+      "quasar": "QUASAR",
+      "pranga": "PRANGA",
+      "pulsar": "PULSAR",
+      "toygar": "TOYGAR",
+      "operante": "OPERANTE",
+      "caelifera": "CAELIFERA",
+      "bitirim": "BİTİRİM"
+    },
+    "platform": {
+      "what": "ما هي المنصة؟",
+      "application": "نموذج الطلب"
+    },
+    "cta": {
+      "examine": "استكشف",
+      "scrollDown": "مرر لأسفل"
+    },
+    "footer": {
+      "copyright": "NEVSPACE © 2025",
+      "privacy": "سياسة الخصوصية",
+      "suppliers": "الموردين"
+    },
+    "heroSection": {
+      "nationalTech": "مبادرة التكنولوجيا الوطنية",
+      "description": "مشروع تركيا الرائد في تقنيات الفضاء",
+      "cta": "استكشف المشروع بمزيد من التفاصيل وتواصل معنا."
+    }
+  }
