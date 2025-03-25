@@ -75,8 +75,8 @@ const Navigation = () => {
       translationKey: 'nav.platform',
       href: '/FilePlatform',
       subItems: [
-        { label: t('platform.what'), translationKey: 'platform.what', href: 'FilePlatform/about' },
-        { label: t('platform.application'), translationKey: 'platform.application', href: 'FilePlatform/platform' }
+        { label: t('platform.what'), translationKey: 'platform.what', href: '/FilePlatform/about' },
+        { label: t('platform.application'), translationKey: 'platform.application', href: '/FilePlatform/platform' }
       ] 
     },
       
