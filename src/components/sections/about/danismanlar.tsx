@@ -86,11 +86,11 @@ const AdvisorsPage: React.FC = () => {
     },
     {
       id: 9,
-      name: "Mustafa Eyüp Can",
+      name: "Eyüp Can",
       title: "",
-      role: "Teknik Danışman",
+      role: " Sanayici / İş Adamı",
       category: "Teknik Heyet",
-      description: " desription",
+      description: "Can Plastik Kalıp İmalat ve İhracat",
       image: "/advisors/placeholder.jpg",
       linkedIn: "https://linkedin.com/in/janesmith"
     },
@@ -98,7 +98,7 @@ const AdvisorsPage: React.FC = () => {
       id: 7,
       name: "Prof. Dr. İbrahim Özkol",
       title: "",
-      role: "Akademik Danışman",
+      role: "İTÜ - ARC Genel Müdürü",
       category: "Teknik Heyet",
       description: "Mühendislik bilimleri alanında uluslararası deneyime sahip, akademik bilgi birikimini pratik uygulamalarla harmanlayan değerli profesörümüz.",
       image: "/advisors/placeholder.jpg",

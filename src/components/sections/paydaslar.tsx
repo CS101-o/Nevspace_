@@ -89,6 +89,7 @@ const SponsorSection: React.FC<SponsorSectionProps> = ({ title, sponsors, delay 
           </div>
         ))}
       </div>
+
     </div>
   );
 };

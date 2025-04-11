@@ -2,7 +2,7 @@
 //import React, { useEffect } from 'react'
 import { Rocket, Target, Quote } from 'lucide-react'
 import Navigation from '@/components/UI/Navigation'
-
+import Image from 'next/image'
 const VisionPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[rgb(0,1,45)] via-[rgb(0,1,65)] to-[rgb(0,1,45)] text-white relative overflow-hidden">
@@ -10,6 +10,30 @@ const VisionPage = () => {
       {/* Background elements */}
       <div className="absolute top-40 right-10 w-32 h-32 bg-blue-500 rounded-full blur-3xl opacity-10 animate-pulse"></div>
       <div className="absolute bottom-20 left-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl opacity-10 animate-pulse"></div>
+
+
+      {/* Hero Image Section */}
+      <section className="hero-section relative h-96 w-full">
+        <div className="absolute inset-0">
+          <Image 
+            src="/images/vision.jpg" 
+            alt="Our Team"
+            fill
+            className="object-cover filter brightness-75"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040720] via-[#04072090] to-[#04072030]" />
+        </div>
+        <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+            ...
+          </h2>
+          <p className="text-lg md:text-xl text-gray-200 max-w-2xl drop-shadow-md">
+            ....
+          </p>
+        </div>
+      </section>
 
       {/* Main content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
