@@ -22,7 +22,11 @@
       "toygar": "TOYGAR",
       "operante": "OPERANTE",
       "caelifera": "CAELIFERA",
-      "bitirim": "BITIRIM"
+      "bitirim": "BITIRIM",
+      "toygarDesc": "Solid Composite Fuel Rocket Engine",
+      "operanteDesc": "Next generation space operations and technology development",
+      "caeliferaDesc": "Innovative space transportation solutions",
+      "pulsarDesc": "Innovative space transportation solutions"
     },
     "platform": {
       "what": "What is the Platform?",
@@ -41,5 +45,12 @@
       "nationalTech": "NATIONAL TECHNOLOGY INITIATIVE",
       "description": "Turkey's pioneering venture in space technologies",
       "cta": "Explore the project in more detail and get in touch with us."
-    }
+    },
+
+    "partners": {
+        "title": "Partners",
+        "mainSponsors": "AFFILIATES",
+        "partners": "Partners"
+      }
+    
   }

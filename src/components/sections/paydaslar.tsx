@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import Navigation from '../UI/Navigation';
+import { useI18n, useTranslation } from '../i18n/I18nProvider';
 
 interface Sponsor {
   id: number;
@@ -18,6 +19,8 @@ interface SponsorSectionProps {
 const SponsorSection: React.FC<SponsorSectionProps> = ({ title, sponsors, delay = 0 }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [hasMounted, setHasMounted] = useState(false);
+  const { dir } = useI18n();
+  const isRTL = dir === 'rtl';
 
   useEffect(() => {
     setHasMounted(true);
@@ -81,8 +84,8 @@ const SponsorSection: React.FC<SponsorSectionProps> = ({ title, sponsors, delay 
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
               </div>
-              <h3 className="text-center text-lg font-semibold text-white mb-2
-                transition-colors duration-300">
+              <h3 className={`text-center text-lg font-semibold text-white mb-2
+                transition-colors duration-300 ${isRTL ? 'text-right w-full' : ''}`}>
                 {sponsor.name}
               </h3>
             </div>
@@ -97,6 +100,10 @@ const SponsorSection: React.FC<SponsorSectionProps> = ({ title, sponsors, delay 
 const SponsorsPage: React.FC = () => {
   const pageRef = useRef<HTMLDivElement>(null);
   const [hasMounted, setHasMounted] = useState(false);
+
+  const { t } = useTranslation('common');
+  const { dir } = useI18n();
+  const isRTL = dir === 'rtl';
 
   useEffect(() => {
     setHasMounted(true);
@@ -206,21 +213,21 @@ const SponsorsPage: React.FC = () => {
       <Navigation/>
       {/* Header */}
       <header className="page-header bg-[#0a0d2c] border-b border-gray-800 opacity-0">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-3xl font-bold text-white">Paydaşlar</h1>
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 ${isRTL ? 'text-right' : ''}`}>
+          <h1 className="text-3xl font-bold text-white">{t('partners.title')}</h1>
         </div>
       </header>
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <SponsorSection 
-          title="İŞTİRAKLER" 
+          title={t('partners.mainSponsors')} 
           sponsors={mainSponsors}
           delay={0.5}
         />
         
         <SponsorSection 
-          title="Partnerler" 
+          title={t('partners.partners')} 
           sponsors={primarySponsors}
           delay={0.7}
         />

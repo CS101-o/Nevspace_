@@ -13,6 +13,14 @@ import arCommon from '../../../public/locales/ar/common.json';
 import enContact from '../../../public/locales/en/contact.json';
 import trContact from '../../../public/locales/tr/contact.json';
 import arContact from '../../../public/locales/ar/contact.json';
+import enAdvisors from '../../../public/locales/en/advisors.json';
+import trAdvisors from '../../../public/locales/tr/advisors.json';
+import arAdvisors from '../../../public/locales/ar/advisors.json';
+import enTeams from '../../../public/locales/en/team.json'
+import trTeams from '../../../public/locales/tr/team.json'
+import arTeams from '../../../public/locales/ar/team.json'
+
+
 
 
 // Initialize i18n instance
@@ -23,15 +31,21 @@ i18n
     resources: {
       en: { 
         common: enCommon, 
-        contact: enContact 
+        contact: enContact,
+        advisors: enAdvisors,
+        teams: enTeams
       },
       tr: { 
         common: trCommon, 
-        contact: trContact 
+        contact: trContact,
+        advisors: trAdvisors,
+        teams: trTeams
       },
       ar: { 
         common: arCommon, 
-        contact: arContact 
+        contact: arContact,
+        advisors: arAdvisors,
+        teams: arTeams
       }
     },
     fallbackLng: 'tr',

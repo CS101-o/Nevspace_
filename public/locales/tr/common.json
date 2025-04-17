@@ -22,7 +22,11 @@
       "toygar": "TOYGAR",
       "operante": "OPERANTE",
       "caelifera": "CAELIFERA",
-      "bitirim": "BİTİRİM"
+      "bitirim": "BİTİRİM",
+      "toygarDesc": "Katı Kompozit Yakıtlı Roket Motoru",
+      "operanteDesc": "Gelecek nesil uzay operasyonları ve teknoloji geliştirme",
+      "caeliferaDesc": "Yenilikçi uzay taşımacılığı çözümleri",
+      "pulsarDesc": "Yenilikçi uzay taşımacılığı çözümleri"
     },
     "platform": {
       "what": "Platform Nedir?",
@@ -41,5 +45,10 @@
       "nationalTech": "MİLLİ TEKNOLOJİ HAMLESİ",
       "description": "Türkiye'nin uzay teknolojileri alanındaki öncü girişimi",
       "cta": "Projeyi daha detaylı inceleyin ve bizimle iletişime geçin."
-    }
+    },
+    "partners": {
+    "title": "Paydaşlar",
+    "mainSponsors": "İŞTİRAKLER",
+    "partners": "Partnerler"
+  }
   }

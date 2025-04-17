@@ -3,6 +3,7 @@ import { Linkedin, Users, ChevronDown, ChevronUp } from 'lucide-react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import Navigation from '@/components/UI/Navigation';
+import { useI18n, useTranslation } from '@/components/i18n/I18nProvider';
 
 interface Advisor {
   id: number;
@@ -13,12 +14,19 @@ interface Advisor {
   description?: string; // Added description field
   linkedIn?: string;
   title?: string;
+  roleTranslationKey?: string;       
+  descriptionTranslationKey?: string;
 }
 
 const AdvisorsPage: React.FC = () => {
   const pageRef = useRef<HTMLDivElement>(null);
   const [hasMounted, setHasMounted] = useState(false);
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
+
+  // Add translation hooks
+  const { t } = useTranslation('advisors');
+  const { dir } = useI18n();
+  const isRTL = dir === 'rtl';
 
   const advisors: Advisor[] = [
     // İdari Heyet
@@ -27,8 +35,10 @@ const AdvisorsPage: React.FC = () => {
       name: "Ömer Faruk Akyüzlü",
       title: "",
       role: "Yönetim Danışmanı",
+      roleTranslationKey: "roles.managementConsultant",
       category: "İdari Heyet",
       description: "Stratejik yönetim ve kurumsal yapılanma alanında uzmanlığıyla projelerimize değer katan deneyimli danışmanımız.",
+      descriptionTranslationKey: "descriptions.omerFaruk",
       image: "/advisors/placeholder.jpg",
       linkedIn: "https://linkedin.com/in/johndoe"
     },
@@ -37,8 +47,10 @@ const AdvisorsPage: React.FC = () => {
       name: "Yusuf Elgörmüş",
       title: "",
       role: "Yönetim Danışmanı",
+      roleTranslationKey: "roles.managementConsultant",
       category: "İdari Heyet",
       description: "Finansal planlama ve risk yönetimi konularında geniş tecrübe sahibi, kurumsal süreçlere yön veren değerli danışmanımız.",
+      descriptionTranslationKey: "descriptions.yusufElgormus",
       image: "/advisors/placeholder.jpg",
       linkedIn: "https://linkedin.com/in/johndoe"
     },
@@ -49,8 +61,10 @@ const AdvisorsPage: React.FC = () => {
       name: "Eyyub Can Odacıoğlu",
       title: "",
       role: "Teknik Danışman",
+      roleTranslationKey: "roles.technicalConsultant",
       category: "Teknik Heyet",
       description: "Mühendislik çözümleri ve teknoloji entegrasyonu konularında uzmanlaşmış, inovatif yaklaşımlarıyla projelere değer katan danışmanımız.",
+      descriptionTranslationKey: "descriptions.eyyubCan",
       image: "/advisors/placeholder.jpg",
       linkedIn: "https://linkedin.com/in/janesmith"
     },
@@ -59,8 +73,10 @@ const AdvisorsPage: React.FC = () => {
       name: "Halit Mirahmetoğlu",
       title: "",
       role: "Teknik Danışman",
+      roleTranslationKey: "roles.technicalConsultant",
       category: "Teknik Heyet",
       description: "Teknoloji geliştirme ve sistem optimizasyonu alanında deneyimli, analitik yaklaşımıyla teknik çözümler sunan danışmanımız.",
+      descriptionTranslationKey: "descriptions.halitMirahmetoglu",
       image: "/advisors/placeholder.jpg",
       linkedIn: "https://linkedin.com/in/janesmith"
     },
@@ -69,8 +85,10 @@ const AdvisorsPage: React.FC = () => {
       name: "Muhammed Tayyip Gürbüz",
       title: "",
       role: "Teknik Danışman",
+      roleTranslationKey: "roles.technicalConsultant",
       category: "Teknik Heyet",
       description: "Yazılım mimarisi ve veri yönetimi konularında uzman, modern teknolojileri projelerimize adapte eden danışmanımız.",
+      descriptionTranslationKey: "descriptions.muhammedTayyip",
       image: "/advisors/placeholder.jpg",
       linkedIn: "https://linkedin.com/in/janesmith"
     },
@@ -79,8 +97,10 @@ const AdvisorsPage: React.FC = () => {
       name: "Ömer Faruk Koç",
       title: "",
       role: "Teknik Danışman",
+      roleTranslationKey: "roles.technicalConsultant",
       category: "Teknik Heyet",
       description: "Elektronik sistemler ve donanım entegrasyonu konusunda uzmanlaşmış, teknik altyapının güçlendirilmesinde önemli rol oynayan danışmanımız.",
+      descriptionTranslationKey: "descriptions.omerFarukKoc",
       image: "/advisors/placeholder.jpg",
       linkedIn: "https://linkedin.com/in/janesmith"
     },
@@ -88,9 +108,11 @@ const AdvisorsPage: React.FC = () => {
       id: 9,
       name: "Eyüp Can",
       title: "",
-      role: " Sanayici / İş Adamı",
+      role: "Sanayici / İş Adamı",
+      roleTranslationKey: "roles.industrialist",
       category: "Teknik Heyet",
       description: "Can Plastik Kalıp İmalat ve İhracat",
+      descriptionTranslationKey: "descriptions.eyupCan",
       image: "/advisors/placeholder.jpg",
       linkedIn: "https://linkedin.com/in/janesmith"
     },
@@ -99,8 +121,10 @@ const AdvisorsPage: React.FC = () => {
       name: "Prof. Dr. İbrahim Özkol",
       title: "",
       role: "İTÜ - ARC Genel Müdürü",
+      roleTranslationKey: "roles.academicDirector",
       category: "Teknik Heyet",
       description: "Mühendislik bilimleri alanında uluslararası deneyime sahip, akademik bilgi birikimini pratik uygulamalarla harmanlayan değerli profesörümüz.",
+      descriptionTranslationKey: "descriptions.ibrahimOzkol",
       image: "/advisors/placeholder.jpg",
       linkedIn: "https://linkedin.com/in/janesmith"
     },
@@ -109,26 +133,38 @@ const AdvisorsPage: React.FC = () => {
       name: "Yusuf Ata",
       title: "",
       role: "Sanayi Danışmanı",
+      roleTranslationKey: "roles.industryConsultant",
       category: "Teknik Heyet",
       description: "Endüstriyel üretim ve sanayi entegrasyonu konularında geniş tecrübeye sahip, pratik çözümler sunan değerli danışmanımız.",
+      descriptionTranslationKey: "descriptions.yusufAta",
       image: "/advisors/placeholder.jpg",
       linkedIn: "https://linkedin.com/in/janesmith"
     }
   ];
 
-  // Group advisors by category
+  
+  // Get translation keys for categories
+  const categoryTranslationKeys = {
+    "İdari Heyet": "categories.administrative",
+    "Teknik Heyet": "categories.technical"
+  };
+
+  // Group advisors by category using translated category names
   const advisorsByCategory = advisors.reduce((acc, advisor) => {
-    if (!acc[advisor.category]) {
-      acc[advisor.category] = [];
+    const categoryKey = categoryTranslationKeys[advisor.category];
+    const translatedCategory = t(categoryKey);
+    
+    if (!acc[translatedCategory]) {
+      acc[translatedCategory] = [];
     }
-    acc[advisor.category].push(advisor);
+    acc[translatedCategory].push(advisor);
     return acc;
   }, {} as Record<string, Advisor[]>);
 
-  // Category display order
+  // Category display order with translations
   const categoryOrder = [
-    "İdari Heyet",
-    "Teknik Heyet"
+    t("categories.administrative"),
+    t("categories.technical")
   ];
 
   // Toggle category expansion
@@ -213,7 +249,9 @@ const AdvisorsPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center space-x-3">
             <Users className="w-8 h-8 text-blue-400" />
-            <h1 className="text-3xl font-bold text-white">Danışmanlar</h1>
+            <h1 className="text-3xl font-bold text-white">
+            {t('title')}
+              </h1>
           </div>
         </div>
       </header>
@@ -233,10 +271,10 @@ const AdvisorsPage: React.FC = () => {
         </div>
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
-            Uzman Danışmanlarımız
+            {t('heroTitle')}
           </h2>
           <p className="text-lg md:text-xl text-gray-200 max-w-2xl drop-shadow-md">
-            Teknoloji ve yönetim alanlarında değerli bilgi birikimleriyle ekibimize yön veren danışmanlarımız
+            {t('heroDescription')}
           </p>
         </div>
       </section>
@@ -291,11 +329,17 @@ const AdvisorsPage: React.FC = () => {
                           {advisor.title && <span className="text-blue-400">{advisor.title} </span>}
                           {advisor.name}
                         </h3>
-                        <p className="text-lg text-gray-300">{advisor.role}</p>
+                        <p className="text-lg text-gray-300">
+                          {advisor.roleTranslationKey ? t(advisor.roleTranslationKey) : advisor.role}
+                        </p>
                         
                         {/* Description */}
-                        {advisor.description && (
-                          <p className="text-sm text-gray-400 mt-2">{advisor.description}</p>
+                        {(advisor.description || advisor.descriptionTranslationKey) && (
+                          <p className="text-sm text-gray-400 mt-2">
+                            {advisor.descriptionTranslationKey 
+                              ? t(advisor.descriptionTranslationKey) 
+                              : advisor.description}
+                          </p>
                         )}
                         
                         {/* LinkedIn Button */}

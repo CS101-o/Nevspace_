@@ -22,7 +22,11 @@
       "toygar": "TOYGAR",
       "operante": "OPERANTE",
       "caelifera": "CAELIFERA",
-      "bitirim": "BİTİRİM"
+      "bitirim": "BİTİRİM",
+      "toygarDesc": "محرك صاروخي بوقود مركب صلب",
+      "operanteDesc": "الجيل القادم من عمليات الفضاء وتطوير التكنولوجيا",
+      "caeliferaDesc": "حلول مبتكرة للنقل الفضائي",
+      "pulsarDesc": "حلول مبتكرة للنقل الفضائي"
     },
     "platform": {
       "what": "ما هي المنصة؟",
@@ -41,5 +45,10 @@
       "nationalTech": "مبادرة التكنولوجيا الوطنية",
       "description": "مشروع تركيا الرائد في تقنيات الفضاء",
       "cta": "استكشف المشروع بمزيد من التفاصيل وتواصل معنا."
-    }
+    },
+    "partners": {
+    "title": "الشركاء",
+    "mainSponsors": "الشركات التابعة",
+    "partners": "الشركاء"
+  }
   }

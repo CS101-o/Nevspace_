@@ -1,6 +1,6 @@
 'use client'
 
-import {useEffect, useRef} from 'react'
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, Facebook, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react'
@@ -10,6 +10,8 @@ import Navigation from '../UI/Navigation'
 import { Space_Grotesk } from 'next/font/google'
 import { Section } from './MissionSections'
 import { useScrollDirection } from '../Hooks/UseScrollDirection'
+import { useI18n, useTranslation } from '../i18n/I18nProvider'
+import LanguageSwitcher from '../UI/LanguageSwitcher'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -30,9 +32,13 @@ export default function DesktopLayout({
   handleExamineClick,
   scrollToNext
 }: DesktopLayoutProps) {
+  // Translation hooks
+  const { t } = useTranslation('common');
+  const { dir } = useI18n();
+  const isRTL = dir === 'rtl';
+
   const navRef = useRef<HTMLDivElement>(null)
-  const {scrollDirection, pastFirstPage} = useScrollDirection()
-  
+  const { scrollDirection, pastFirstPage } = useScrollDirection()
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -61,7 +67,7 @@ export default function DesktopLayout({
           onLeaveBack: () => {
             gsap.to(`#section-${index} .content-wrapper`, {
               opacity: 0,
-              x: -20,
+              x: isRTL ? 20 : -20, // Adjust for RTL
               duration: 1.2
             })
             gsap.to(`#section-${index} .examine-button`, {
@@ -77,7 +83,7 @@ export default function DesktopLayout({
       const ctx = gsap.context(() => {
         gsap.from('.social-sidebar a', {
           opacity: 0,
-          x: 50,
+          x: isRTL ? -50 : 50, // Adjust for RTL
           duration: 0.8,
           stagger: 0.2,
           delay: 1,
@@ -96,7 +102,7 @@ export default function DesktopLayout({
         // Add animation for logo
         gsap.from('.logo-container', {
           opacity: 0,
-          x: -30,
+          x: isRTL ? 30 : -30, // Adjust for RTL
           duration: 0.8,
           delay: 0.3,
           clearProps: 'all'
@@ -108,53 +114,59 @@ export default function DesktopLayout({
         ctx.revert()
       }
     }
-  }, [sections])
+  }, [sections, isRTL])
 
   return (
     <>
-       {/* Mission Navigation with Logo */}
-        <div 
-          ref={navRef} 
-          className={`fixed top-0 left-0 right-0 z-40 bg-gradient-to-b from-black/50 to-transparent
-            ${pastFirstPage ? 'bg-blue-900/95' : 'bg-gradient-to-b from-black/50 to-transparent'}
-            transition-transform duration-300 ease-in-out
-            ${scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'}`}
-        >
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="mission-nav flex items-center justify-center h-24 relative">
-              {/* Logo */}
-              <div className="logo-container absolute left-4">
-                <Link href="/" className="flex items-center hover:opacity-80 transition-opacity duration-300">
-                  <div className="relative w-[140px] h-[45px]">
-                    <Image
-                      src="/images/logo.svg"
-                      alt="Nevspace Logo"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
+      {/* Mission Navigation with Logo */}
+      <div 
+        ref={navRef} 
+        className={`fixed top-0 left-0 right-0 z-40 bg-gradient-to-b from-black/50 to-transparent
+          ${pastFirstPage ? 'bg-blue-900/95' : 'bg-gradient-to-b from-black/50 to-transparent'}
+          transition-transform duration-300 ease-in-out
+          ${scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'}`}
+      >
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="mission-nav flex items-center justify-center h-24 relative">
+            {/* Logo */}
+            <div className={`logo-container absolute ${isRTL ? 'right-4' : 'left-4'}`}>
+              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity duration-300">
+                <div className="relative w-[140px] h-[45px]">
+                  <Image
+                    src="/images/logo.svg"
+                    alt="Nevspace Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </Link>
+            </div>
+            
+            {/* Navigation Links - Now Centered */}
+            <div className="flex items-center justify-center space-x-8">
+              {missions.map((mission) => (
+                <Link
+                  key={mission.name}
+                  href={mission.path}
+                  className="text-white text-opacity-90 hover:text-opacity-100 transition-all duration-300 
+                    text-sm tracking-wider px-4 font-medium"
+                >
+                  {mission.name}
                 </Link>
-              </div>
-              {/* Navigation Links - Now Centered */}
-              <div className="flex items-center justify-center space-x-8">
-                {missions.map((mission) => (
-                  <Link
-                    key={mission.name}
-                    href={mission.path}
-                    className="text-white text-opacity-90 hover:text-opacity-100 transition-all duration-300 
-                      text-sm tracking-wider px-4 font-medium"
-                  >
-                    {mission.name}
-                  </Link>
-                ))}
-              </div>
+              ))}
+            </div>
+
+            {/* Language Switcher */}
+            <div className={`absolute ${isRTL ? 'left-4' : 'right-4'}`}>
+              <LanguageSwitcher />
             </div>
           </div>
         </div>
+      </div>
 
       {/* Social Media Sidebar */}
-      <div className={`social-sidebar fixed right-6 top-1/2 transform -translate-y-1/2 z-30 transition-opacity duration-500 ${pastFirstPage ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+      <div className={`social-sidebar fixed ${isRTL ? 'left-6' : 'right-6'} top-1/2 transform -translate-y-1/2 z-30 transition-opacity duration-500 ${pastFirstPage ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         <div className="flex flex-col space-y-6">
           <a href="https://instagram.com/nevspace" className="text-white text-opacity-90 hover:text-opacity-100 transition-all duration-300">
             <Instagram size={50} strokeWidth={1.5} />
@@ -194,8 +206,8 @@ export default function DesktopLayout({
                 quality={100}
               />
               {index === 0 && (
-                <div className="absolute bottom-8 right-8 text-white/80 text-lg tracking-wider">
-                  2030, QUASAR Misyonu
+                <div className={`absolute bottom-8 ${isRTL ? 'left-8' : 'right-8'} text-white/80 text-lg tracking-wider`}>
+                  2030, {t('missions.quasar')}
                 </div>
               )}
             </div>
@@ -206,7 +218,7 @@ export default function DesktopLayout({
               ${index !== 0 ? 'opacity-0 translate-x-[-20px]' : ''}`}>
               
               {/* Top Content */}
-              <div className={`${index === 0 ? 'max-w-xl p-6 rounded-lg mt-28 -ml-20' : 'mt-48'}`}>
+              <div className={`${index === 0 ? 'max-w-xl p-6 rounded-lg mt-28 ' + (isRTL ? '-mr-20' : '-ml-20') : 'mt-48'}`}>
                 {index === 0 ? (
                   <div className="space-heading-wrapper">
                     <div className="nevspace-badge inline-block text-sm font-light tracking-[0.4em] mb-6 text-gray-300
@@ -216,7 +228,7 @@ export default function DesktopLayout({
                     </div>
                     <div className="overflow-hidden">
                       <h1 className="space-heading">
-                        {['MİLLİ', 'TEKNOLOJİ', 'HAMLESİ'].map((text, i) => (
+                        {t('heroSection.nationalTech').split(' ').map((text, i) => (
                           <span 
                             key={text} 
                             className={`${spaceGrotesk.className} title-slide title-slide-delay-${i + 1} block text-[8vw] 
@@ -234,8 +246,8 @@ export default function DesktopLayout({
                         ))}
                       </h1>
                     </div>
-                    <div className="description-fade mt-8 text-lg tracking-wider text-gray-300 max-w-xl leading-relaxed">
-                      {section.description}
+                    <div className={`description-fade mt-8 text-lg tracking-wider text-gray-300 max-w-xl leading-relaxed ${isRTL ? 'text-right' : ''}`}>
+                      {t('heroSection.description')}
                     </div>
                   </div>
                 ) : (
@@ -244,7 +256,7 @@ export default function DesktopLayout({
                     <div className="text-sm uppercase tracking-[0.2em] text-gray-300 mb-4">
                       ...
                     </div>
-                    <h1 className="text-[60px] font-bold text-white leading-none tracking-wide mb-8">
+                    <h1 className={`text-[60px] font-bold text-white leading-none tracking-wide mb-8 ${isRTL ? 'text-right' : ''}`}>
                       {section.title}
                     </h1>
                     <button
@@ -254,19 +266,18 @@ export default function DesktopLayout({
                         hover:bg-white/10"
                     >
                       <span className="relative text-lg tracking-wider">
-                        INCELE
+                        {t('cta.examine')}
                       </span>
                     </button>
                   </div>
-                  
-                  )}
+                )}
               </div>
 
               {/* Bottom Content - Only show for opening page */}
               {index === 0 && (
-                <div className="max-w-2xl mb-10">
+                <div className={`max-w-2xl mb-10 ${isRTL ? 'text-right' : ''}`}>
                   <div className="text-lg tracking-wider text-gray-300 max-w-xl leading-relaxed mb-6">
-                    Projeyi daha detaylı inceleyin ve bizimle iletişime geçin.
+                    {t('heroSection.cta')}
                   </div>
                   <button
                     onClick={() => handleExamineClick(section.id)}
@@ -275,14 +286,13 @@ export default function DesktopLayout({
                       hover:bg-white/10"
                   >
                     <span className="relative text-lg tracking-wider">
-                      İNCELE
+                      {t('cta.examine')}
                     </span>
                   </button>
                 </div>
               )}
             </div>
 
-            
             {/* Scroll Indicator */}
             {index < sections.length - 1 && (
               <button
@@ -293,7 +303,7 @@ export default function DesktopLayout({
               >
                 <span className="block text-sm mb-2 tracking-wider transition-transform duration-300
                   group-hover:transform group-hover:-translate-y-1">
-                  Aşağı Kaydır
+                  {t('cta.scrollDown')}
                 </span>
                 <ChevronDown className="w-6 h-6 animate-bounce mx-auto opacity-70 group-hover:opacity-100" />
               </button>
@@ -305,18 +315,19 @@ export default function DesktopLayout({
       {/* Footer */}
       <div className="bg-blue-900 backdrop-blur-sm border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between h-24 text-white/70 text-sm">
-            <div>NEVSPACE © 2025</div>
+          <div className={`flex items-center justify-between h-24 text-white/70 text-sm ${isRTL ? 'flex-row-reverse' : ''}`}>
+            <div>{t('footer.copyright')}</div>
             <div className="flex space-x-8">
               <Link href="/privacy" className="hover:text-white transition-colors duration-300">
-                GİZLİLİK POLİTİKASI
+                {t('footer.privacy')}
               </Link>
               <Link href="/suppliers" className="hover:text-white transition-colors duration-300">
-                TEDARİKÇİLER
+                {t('footer.suppliers')}
               </Link>
             </div>
           </div>
         </div>
       </div>
     </>
-  )}
+  )
+}

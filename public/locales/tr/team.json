@@ -1,0 +1,52 @@
+{
+    "title": "Ekibimiz",
+    "heroTitle": "Başarılı Ekibimizle Tanışın",
+    "heroDescription": "Yenilikçi çözümler ve teknolojik ilerlemeler için bir araya gelen uzman kadromuz",
+    "heroAltText": "Ekibimiz",
+    "visitLinkedIn": "{{name}} LinkedIn profilini ziyaret et",
+    "categories": {
+      "management": "Yönetim",
+      "departmentLeaders": "Birim Liderleri",
+      "teamCaptains": "Takım Kaptanları",
+      "teamMembers": "Ekip Üyeleri"
+    },
+    "roles": {
+      "founderCEO": "Kurucu, CEO",
+      "coo": "COO",
+      "cto": "CTO",
+      "cso": "CSO",
+      "spaceHistoryLeader": "Uzay Tarihi Birim Lideri",
+      "spaceLawLeader": "Uzay Hukuku Birim Lideri",
+      "mediaDirector": "Medya Direktörü",
+      "avionicsLeader": "Aviyonik Birim Lideri",
+      "ballisticsLeader": "Balistik Birim Lideri",
+      "ituCaptain": "İTÜ Takım Kaptanı",
+      "ytuCaptain": "YTÜ Takım Kaptanı",
+      "softwareCaptain": "Yazılım Takım Kaptanı",
+      "analysisCaptain": "Analiz Takım Kaptanı",
+      "hardwareCaptain": "Donanım Takım Kaptanı",
+      "ballisticsMember": "Balistik Ekip Üyesi",
+      "mediaMember": "Medya Ekip Üyesi"
+    },
+    "descriptions": {
+      "mustafaEymen": "Teknoloji ve yönetim konusunda geniş tecrübeye sahip, stratejik vizyonuyla ekibi ileri taşıyan kurucu liderimiz.",
+      "arifEmre": "Operasyonel süreçleri yöneten, organizasyonel yapılanma ve süreç optimizasyonu konularında uzman, iş stratejilerini başarıyla uygulayan liderimiz.",
+      "batuhanAkkova": "Teknoloji stratejilerini belirleyen, inovasyon ve Ar-Ge süreçlerini yöneten, teknik altyapının geliştirilmesinde liderlik eden teknoloji direktörümüz.",
+      "muhammedZahid": "Stratejik planlama ve şirket büyüme hedeflerinden sorumlu, sürdürülebilir büyüme stratejileri geliştiren üst düzey yöneticimiz.",
+      "aliAktas": "Uzay tarihine ilişkin araştırmalar yürüten, bilgi birikimi ve analitik yaklaşımıyla ekibi yönlendiren değerli liderimiz.",
+      "anilAkyol": "Uzay hukuku alanındaki yasal düzenlemeler ve fikri mülkiyet haklarında uzmanlaşmış, uluslararası uzay hukuku çerçevesinde projelere yön veren avukat liderimiz.",
+      "ahmetBilgic": "İletişim stratejileri ve medya ilişkilerini yöneten, kurumsal kimliğimizin güçlendirilmesinde önemli rol oynayan direktörümüz.",
+      "dorukTan": "Aviyonik sistemlerin geliştirilmesi ve entegrasyonunda uzmanlaşmış, yenilikçi çözümleriyle öne çıkan liderimiz.",
+      "utkuMutlu": "Balistik sistemlerin tasarımı ve optimizasyonunda uzmanlaşmış, teknik hesaplamaları yöneten ve analitik çözümler sunan liderimiz.",
+      "ibrahimDincsoy": "İTÜ ekibini yöneten, teknik problemlere yaratıcı çözümler üreten, liderlik vasıflarıyla öne çıkan kaptanımız.",
+      "ismailBoler": "YTÜ ekibinin başında, mühendislik alanındaki derin bilgisiyle ekibe rehberlik eden, sonuç odaklı kaptanımız.",
+      "kaanOktem": "Yazılım geliştirme süreçlerini yöneten, modern teknolojileri projelerimize entegre eden, yaratıcı çözümler sunan kaptanımız.",
+      "muhammedEmin": "Veri analizi ve performans değerlendirmesi konusunda uzman, ekibin istatistiksel çalışmalarını yöneten kaptanımız.",
+      "mustafaErgin": "Donanım ekibinin başında, elektronik sistemlerin tasarım ve üretiminde uzmanlaşmış, detaycı yaklaşımıyla tanınan kaptanımız.",
+      "asimFurkan": "Balistik hesaplamalar ve simülasyonlar konusunda çalışan, malzeme bilimi ve üretim teknikleri konusunda bilgi sahibi üyemiz.",
+      "mehmetAffan": "Mekanik tasarım ve balistik simülasyonlar alanında görev alan, analitik düşünce yapısıyla çözümler sunan ekip üyemiz.",
+      "muhennedVelid": "Balistik hesaplamalar ve simülasyonlar konusunda çalışan, uluslararası deneyimiyle ekibe katkı sağlayan değerli üyemiz.",
+      "mehmetAnil": "Video prodüksiyon ve içerik geliştirme alanlarında çalışan, etkinliklerin belgelenmesinde görev alan medya ekibi üyemiz.",
+      "omerFarukKaraoglu": "Sosyal medya yönetimi ve içerik stratejileri konusunda uzmanlaşmış, kurumsal iletişime katkı sağlayan ekip üyemiz."
+    }
+  }
