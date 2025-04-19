@@ -3,7 +3,8 @@ import { Linkedin, Users, ChevronDown, ChevronUp } from 'lucide-react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import Navigation from '@/components/UI/Navigation';
-import { useI18n, useTranslation } from '@/components/i18n/I18nProvider';
+import { useTranslation } from '@/components/i18n/I18nProvider'; // useI18n, add later 
+import Logo from '../../UI/logo'
 
 interface Advisor {
   id: number;
@@ -25,8 +26,8 @@ const AdvisorsPage: React.FC = () => {
 
   // Add translation hooks
   const { t } = useTranslation('advisors');
-  const { dir } = useI18n();
-  const isRTL = dir === 'rtl';
+  //const { dir } = useI18n();
+  //const isRTL = dir === 'rtl';
 
   const advisors: Advisor[] = [
     // İdari Heyet
@@ -243,15 +244,19 @@ const AdvisorsPage: React.FC = () => {
   return (
     <div ref={pageRef} className="min-h-screen bg-[#040720]">
       <Navigation/>
-      
       {/* Header */}
       <header className="page-header bg-[#0a0d2c] border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center space-x-3">
-            <Users className="w-8 h-8 text-blue-400" />
-            <h1 className="text-3xl font-bold text-white">
-            {t('title')}
+          <div className="flex items-center justify-between">
+            {/* Logo - properly positioned */}
+            <Logo className="mt-2" />
+            
+            <div className="flex items-center space-x-3">
+              <Users className="w-8 h-8 text-blue-400" />
+              <h1 className="text-3xl font-bold text-white">
+                {t('title')}
               </h1>
+            </div>
           </div>
         </div>
       </header>

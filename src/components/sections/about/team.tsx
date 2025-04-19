@@ -4,6 +4,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import Navigation from '@/components/UI/Navigation';
 import { useI18n, useTranslation } from '@/components/i18n/I18nProvider';
+import Logo from "@/components/UI/logo"
 
 interface TeamMember {
   id: number;
@@ -356,11 +357,14 @@ const TeamPage: React.FC = () => {
       {/* Header */}
       <header className="page-header bg-[#0a0d2c] border-b border-gray-800">
         <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 ${isRTL ? 'text-right' : ''}`}>
-          <div className={`flex items-center ${isRTL ? 'flex-row-reverse space-x-reverse' : 'space-x-3'}`}>
-            <Users className="w-8 h-8 text-blue-400" />
-            <h1 className={`text-3xl font-bold text-white ${isRTL ? 'mr-3' : ''}`}>
-              {t('title')}
-            </h1>
+          <div className="flex items-center justify-between">   
+            <Logo className = 'm-2'/>
+            <div className={`flex items-center ${isRTL ? 'flex-row-reverse space-x-reverse' : 'space-x-3'}`}>
+              <Users className="w-8 h-8 text-blue-400" />
+              <h1 className={`text-3xl font-bold text-white ${isRTL ? 'mr-3' : ''}`}>
+                {t('title')}
+              </h1>
+            </div>
           </div>
         </div>
       </header>

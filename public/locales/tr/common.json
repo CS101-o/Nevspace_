@@ -13,7 +13,46 @@
       "vision": "Vizyon",
       "team": "Kadro",
       "advisors": "Danışmanlar Kurulu",
-      "identity": "Kurumsal Kimlik"
+      "identity": "Kurumsal Kimlik",
+
+      "visionPage": {
+      "title": "Vision",
+      "heroTitle": "Our Vision for the Future",
+      "heroSubtitle": "Pioneering space technologies for a better tomorrow",
+      "heroAlt": "Vision Image",
+      "goalsTitle": "Our 2030 Goal",
+      "goalsContent": "As a result of the 10-year vision set out with all team members in 2020, 'Nevspace Space Technologies' team wants to design, manufacture, and launch a scientific purpose service rocket with a minimum payload capacity of 100 kg to Low Earth Orbit (LEO), along with all its subsystems, and aims to implement Turkey's first civilian national launcher platform.",
+      "longTermTitle": "Long-Term Vision",
+      "longTermContent": "At the same time, Nevspace Space Technologies, which has the potential to work in all kinds of innovation fields related to space and technology, also encompasses research areas on 'Thorium-based Nuclear-Fueled Rocket Engines' as part of its long-term founding vision.",
+      "quote": "\"Turkey's first civilian space technologies company...\""
+    },
+
+    "workSchemaPage": {
+      "title": "ORGANİZASYON ŞEMASI",
+      "zoomIn": "Yakınlaştır",
+      "zoomOut": "Uzaklaştır",
+      "resetZoom": "Sıfırla",
+      "subUnits": "{{count}} Alt Birim",
+      "orgUnits": {
+        "YÖNETİM KURULU": "YÖNETİM KURULU",
+        "DANIŞMANLAR KURULU": "DANIŞMANLAR KURULU",
+        "İDARİ HEYET": "İDARİ HEYET",
+        "TEKNİK HEYET": "TEKNİK HEYET",
+        "YÖNETİM KURULU BAŞKANI": "YÖNETİM KURULU BAŞKANI",
+        "PROJE KOORDİNATÖRLÜĞÜ": "PROJE KOORDİNATÖRLÜĞÜ",
+        "ÜNİVERSİTE TAKIMLARI": "ÜNİVERSİTE TAKIMLARI",
+        "AVİYONİK BİRİM LİDERLİĞİ": "AVİYONİK BİRİM LİDERLİĞİ",
+        "YAZILIM TAKIMI": "YAZILIM TAKIMI",
+        "DONANIM TAKIMI": "DONANIM TAKIMI",
+        "MEKANİK BİRİM LİDERLİĞİ": "MEKANİK BİRİM LİDERLİĞİ",
+        "BALİSTİK TAKIMI": "BALİSTİK TAKIMI",
+        "YAPISAL TAKIMI": "YAPISAL TAKIMI",
+        "ANALİZ TAKIMI": "ANALİZ TAKIMI",
+        "MEDYA DİREKTÖRLÜĞÜ": "MEDYA DİREKTÖRLÜĞÜ",
+        "HUKUK BİRİMİ": "HUKUK BİRİMİ"
+      }
+    }
+    
     },
     "missions": {
       "quasar": "QUASAR",

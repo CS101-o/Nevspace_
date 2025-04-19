@@ -13,7 +13,45 @@
       "vision": "Vision",
       "team": "Team",
       "advisors": "Advisory Board",
-      "identity": "Corporate Identity"
+      "identity": "Corporate Identity",
+      "visionPage": {
+      "title": "Vision",
+      "heroTitle": "Our Vision for the Future",
+      "heroSubtitle": "Pioneering space technologies for a better tomorrow",
+      "heroAlt": "Vision Image",
+      "goalsTitle": "Our 2030 Goal",
+      "goalsContent": "As a result of the 10-year vision set out with all team members in 2020, 'Nevspace Space Technologies' team wants to design, manufacture, and launch a scientific purpose service rocket with a minimum payload capacity of 100 kg to Low Earth Orbit (LEO), along with all its subsystems, and aims to implement Turkey's first civilian national launcher platform.",
+      "longTermTitle": "Long-Term Vision",
+      "longTermContent": "At the same time, Nevspace Space Technologies, which has the potential to work in all kinds of innovation fields related to space and technology, also encompasses research areas on 'Thorium-based Nuclear-Fueled Rocket Engines' as part of its long-term founding vision.",
+      "quote": "\"Turkey's first civilian space technologies company...\""
+    },
+
+    "workSchemaPage": {
+      "title": "ORGANIZATION CHART",
+      "zoomIn": "Zoom In",
+      "zoomOut": "Zoom Out",
+      "resetZoom": "Reset Zoom",
+      "subUnits": "{{count}} Sub-units",
+      "orgUnits": {
+        "YÖNETİM KURULU": "BOARD OF DIRECTORS",
+        "DANIŞMANLAR KURULU": "ADVISORY BOARD",
+        "İDARİ HEYET": "ADMINISTRATION",
+        "TEKNİK HEYET": "TECHNICAL UNIT",
+        "YÖNETİM KURULU BAŞKANI": "CHAIRMAN OF THE BOARD",
+        "PROJE KOORDİNATÖRLÜĞÜ": "PROJECT MANAGEMENT",
+        "ÜNİVERSİTE TAKIMLARI": "UNIVERSITY TEAMS",
+        "AVİYONİK BİRİM LİDERLİĞİ": "AVIONICS UNIT",
+        "YAZILIM TAKIMI": "SOFTWARE TEAM",
+        "DONANIM TAKIMI": "HARDWARE TEAM",
+        "MEKANİK BİRİM LİDERLİĞİ": "MECHANICAL UNIT",
+        "BALİSTİK TAKIMI": "BALLISTICS TEAM",
+        "YAPISAL TAKIMI": "STRUCTURAL TEAM",
+        "ANALİZ TAKIMI": "ANALYSIS TEAM",
+        "MEDYA DİREKTÖRLÜĞÜ": "MEDIA TEAM",
+        "HUKUK BİRİMİ": "LEGAL DEPARTMENT"
+      }
+    }
+
     },
     "missions": {
       "quasar": "QUASAR",
@@ -22,7 +60,11 @@
       "toygar": "TOYGAR",
       "operante": "OPERANTE",
       "caelifera": "CAELIFERA",
-      "bitirim": "BITIRIM"
+      "bitirim": "BITIRIM",
+      "toygarDesc": "Solid Composite Fuel Rocket Engine",
+      "operanteDesc": "Next generation space operations and technology development",
+      "caeliferaDesc": "Innovative space transportation solutions",
+      "pulsarDesc": "Innovative space transportation solutions"
     },
     "platform": {
       "what": "What is the Platform?",
@@ -41,5 +83,12 @@
       "nationalTech": "NATIONAL TECHNOLOGY INITIATIVE",
       "description": "Turkey's pioneering venture in space technologies",
       "cta": "Explore the project in more detail and get in touch with us."
-    }
+    },
+
+    "partners": {
+        "title": "Partners",
+        "mainSponsors": "AFFILIATES",
+        "partners": "Partners"
+      }
+    
   }

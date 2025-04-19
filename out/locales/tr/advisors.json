@@ -1,0 +1,33 @@
+{
+    "title": "Danışmanlar",
+    "heroTitle": "Uzman Danışmanlarımız",
+    "heroDescription": "Teknoloji ve yönetim alanlarında değerli bilgi birikimleriyle ekibimize yön veren danışmanlarımız",
+    "heroAltText": "Danışmanlarımız",
+    "visitLinkedIn": "{{name}} LinkedIn profilini ziyaret et",
+    "categories": {
+      "administrative": "İdari Heyet",
+      "technical": "Teknik Heyet"
+    },
+    "roles": {
+      "managementConsultant": "Yönetim Danışmanı",
+      "technicalConsultant": "Teknik Danışman",
+      "industryConsultant": "Sanayi Danışmanı",
+      "industrialist": "Sanayici / İş Adamı",
+      "academicDirector": "İTÜ - ARC Genel Müdürü"
+    },
+    "descriptions": {
+      "omerFaruk": "Stratejik yönetim ve kurumsal yapılanma alanında uzmanlığıyla projelerimize değer katan deneyimli danışmanımız.",
+      "yusufElgormus": "Finansal planlama ve risk yönetimi konularında geniş tecrübe sahibi, kurumsal süreçlere yön veren değerli danışmanımız.",
+      "eyyubCan": "Mühendislik çözümleri ve teknoloji entegrasyonu konularında uzmanlaşmış, inovatif yaklaşımlarıyla projelere değer katan danışmanımız.",
+      "halitMirahmetoglu": "Teknoloji geliştirme ve sistem optimizasyonu alanında deneyimli, analitik yaklaşımıyla teknik çözümler sunan danışmanımız.",
+      "muhammedTayyip": "Yazılım mimarisi ve veri yönetimi konularında uzman, modern teknolojileri projelerimize adapte eden danışmanımız.",
+      "omerFarukKoc": "Elektronik sistemler ve donanım entegrasyonu konusunda uzmanlaşmış, teknik altyapının güçlendirilmesinde önemli rol oynayan danışmanımız.",
+      "eyupCan": "Can Plastik Kalıp İmalat ve İhracat",
+      "ibrahimOzkol": "Mühendislik bilimleri alanında uluslararası deneyime sahip, akademik bilgi birikimini pratik uygulamalarla harmanlayan değerli profesörümüz.",
+      "yusufAta": "Endüstriyel üretim ve sanayi entegrasyonu konularında geniş tecrübeye sahip, pratik çözümler sunan değerli danışmanımız."
+    },
+    "team" :{
+        
+    }
+    
+  }

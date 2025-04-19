@@ -7,6 +7,8 @@ import { Avatar } from '@/components/UI/avatar';
 import { Tooltip, TooltipProvider, TooltipTrigger, TooltipContent } from '@/components/UI/tooltip';
 import { Badge } from '@/components/UI/badge';
 import Navigation from '@/components/UI/Navigation';
+import { useI18n, useTranslation } from '@/components/i18n/I18nProvider'; 
+import Logo from '@/components/UI/logo'
 import { 
   ChevronDown,   
   ZoomIn, 
@@ -50,26 +52,30 @@ const ZoomControls = memo<ZoomControlsProps>(({ zoom, setZoom }) => {
 
   const handleReset = useCallback(() => setZoom(1.0), [setZoom]); // Reset to 100%
 
+  const { t } = useTranslation('common');
+  //const { dir } = useI18n();
+  //const isRTL = dir == 'rtl'; 
+
   return (
-    <div className="fixed bottom-8 right-8 flex gap-2 bg-navy-900/80 p-2 rounded-lg border border-white/10 backdrop-blur-sm z-50">
+    <div className="fixed bottom-8 right-8 ${isRTL ? 'righ-8' : 'left-8'} flex gap-2 bg-navy-900/80 p-2 rounded-lg border border-white/10 backdrop-blur-sm z-50">
       <button
         onClick={handleZoomIn}
         className="p-2 rounded-lg hover:bg-white/5 text-white/60 hover:text-white/80 transition-colors duration-300"
-        title="Zoom In"
+        title={t('about.workSchemaPage.zoomIn')}
       >
         <ZoomIn className="h-5 w-5" />
       </button>
       <button
         onClick={handleZoomOut}
         className="p-2 rounded-lg hover:bg-white/5 text-white/60 hover:text-white/80 transition-colors duration-300"
-        title="Zoom Out"
+        title={t('about.workSchemaPage.zoomOut')}
       >
         <ZoomOut className="h-5 w-5" />
       </button>
       <button
         onClick={handleReset}
         className="p-2 rounded-lg hover:bg-white/5 text-white/60 hover:text-white/80 transition-colors duration-300"
-        title="Reset Zoom"
+        title={t('about.workSchemaPage.resetZoom')}
       >
         <RotateCcw className="h-5 w-5" />
       </button>
@@ -84,9 +90,12 @@ ZoomControls.displayName = 'ZoomControls';
 
 // Memoized organization node component with ultra-compact design
 const OrganizationNode = memo<OrganizationNodeProps>(({ org, onCollapse, collapsed }) => {
+  const { t } = useTranslation('common');
+  const { dir } = useI18n();
+  const isRTL = dir === 'rtl';
   return (
     <Card className="bg-navy-900/30 backdrop-blur-md inline-block rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg max-w-[150px]">
-      <CardHeader className="p-1 flex items-center space-x-1">
+      <CardHeader className="p-1 flex items-center ${isRTL ? 'flex-row-reverse space-x-reverse' : ''} space-x-1">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger>
@@ -105,15 +114,15 @@ const OrganizationNode = memo<OrganizationNodeProps>(({ org, onCollapse, collaps
               </Badge>
             </TooltipTrigger>
             <TooltipContent>
-              <p>{org.id} - {`${org.organizationChildRelationship?.length || 0} Alt Birim`}</p>
+              <p>{org.id} - {t('about.workSchemaPage.subUnits', { count: org.organizationChildRelationship?.length || 0 })}</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
         
-        <div className="flex-1">
+        <div className={`flex-1 ${isRTL ? 'text-right' : ''}`}>
           <h3 className="text-xs font-medium text-white/80 truncate">
             <span className="text-blue-300/60 text-xs">{org.id}</span>
-            <span className="block text-[10px] leading-tight">{org.tradingName}</span>
+            <span className="block text-[10px] leading-tight">{t(`about.workSchemaPage.orgUnits.${org.tradingName}`)}</span>
           </h3>
         </div>
 
@@ -178,8 +187,12 @@ OrganizationTree.displayName = 'OrganizationTree';
 // Main organization chart component with responsive adjustments
 const OrganizationChart = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const [zoom, setZoom] = useState(1.0); // Start at 100%
+  const [zoom, setZoom] = useState(0.99); // Start at 99%
   const [containerWidth, setContainerWidth] = useState("100%");
+
+  const { t } = useTranslation('common');
+  //const { dir } = useI18n();
+  //const isRTL = dir === 'rtl';
 
   const organizationData: OrganizationData = {
     tradingName: "YÖNETİM KURULU",
@@ -326,6 +339,8 @@ const OrganizationChart = () => {
     <section id="organization-chart" className="relative min-h-screen w-full bg-[#0B1120] py-16">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0B1120]/50 to-[#0B1120]" />
       <Navigation />
+      <Logo className="absolute top-4 left-4 z-20"/>   
+  
       <div className="absolute inset-0 opacity-30">
         <div className="h-full w-full bg-[url('/images/stars.png')] bg-repeat" />
       </div>
@@ -333,7 +348,7 @@ const OrganizationChart = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-2">
         <div className="mb-8">
           <h2 className="text-2xl md:text-4xl font-bold leading-tight tracking-wide text-white drop-shadow-lg text-center">
-            ORGANİZASYON ŞEMASI
+          {t('about.workSchemaPage.title')}
           </h2>
         </div>
         

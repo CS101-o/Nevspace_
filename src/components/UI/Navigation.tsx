@@ -61,10 +61,10 @@ const Navigation = () => {
       translationKey: 'nav.missions',
       href: '/missions',
       subItems: [
-        { label: t('missions.quasar'), translationKey: 'missions.quasar', href: 'missions/QUASAR' },
-        { label: t('missions.pranga'), translationKey: 'missions.pranga', href: 'missions/PRANGA' },
-        { label: t('missions.pulsar'), translationKey: 'missions.pulsar', href: 'missions/PULSAR' },
-        { label: t('missions.toygar'), translationKey: 'missions.toygar', href: 'missions/TOYGAR' },
+        { label: t('missions.quasar'), translationKey: 'missions.quasar', href: '/missions/QUASAR' },
+        { label: t('missions.pranga'), translationKey: 'missions.pranga', href: '/missions/PRANGA' },
+        { label: t('missions.pulsar'), translationKey: 'missions.pulsar', href: '/missions/PULSAR' },
+        { label: t('missions.toygar'), translationKey: 'missions.toygar', href: '/missions/TOYGAR' },
         { label: t('missions.operante'), translationKey: 'missions.operante', href: '/missions/OPERNATE' },
         { label: t('missions.caelifera'), translationKey: 'missions.caelifera', href: '/missions/CAELIFERA' },
         { label: t('missions.bitirim'), translationKey: 'missions.bitirim', href: '/missions/BITIRIM' }

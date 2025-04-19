@@ -1,0 +1,52 @@
+{
+    "title": "Our Team",
+    "heroTitle": "Meet Our Successful Team",
+    "heroDescription": "Our expert team that comes together for innovative solutions and technological advancements",
+    "heroAltText": "Our Team",
+    "visitLinkedIn": "Visit {{name}}'s LinkedIn profile",
+    "categories": {
+      "management": "Management",
+      "departmentLeaders": "Department Leaders",
+      "teamCaptains": "Team Captains",
+      "teamMembers": "Team Members"
+    },
+    "roles": {
+      "founderCEO": "Founder, CEO",
+      "coo": "COO",
+      "cto": "CTO",
+      "cso": "CSO",
+      "spaceHistoryLeader": "Space History Department Leader",
+      "spaceLawLeader": "Space Law Department Leader",
+      "mediaDirector": "Media Director",
+      "avionicsLeader": "Avionics Department Leader",
+      "ballisticsLeader": "Ballistics Department Leader",
+      "ituCaptain": "ITU Team Captain",
+      "ytuCaptain": "YTU Team Captain",
+      "softwareCaptain": "Software Team Captain",
+      "analysisCaptain": "Analysis Team Captain",
+      "hardwareCaptain": "Hardware Team Captain",
+      "ballisticsMember": "Ballistics Team Member",
+      "mediaMember": "Media Team Member"
+    },
+    "descriptions": {
+      "mustafaEymen": "Our founding leader with extensive experience in technology and management, who leads the team forward with his strategic vision.",
+      "arifEmre": "Our leader who manages operational processes, specializes in organizational structuring and process optimization, and successfully implements business strategies.",
+      "batuhanAkkova": "Our technology director who determines technology strategies, manages innovation and R&D processes, and leads the development of technical infrastructure.",
+      "muhammedZahid": "Our senior executive responsible for strategic planning and company growth goals, developing sustainable growth strategies.",
+      "aliAktas": "Our valuable leader who conducts research on space history, guiding the team with his knowledge and analytical approach.",
+      "anilAkyol": "Our lawyer leader who specializes in legal regulations and intellectual property rights in the field of space law, guiding projects within the framework of international space law.",
+      "ahmetBilgic": "Our director who manages communication strategies and media relations, playing an important role in strengthening our corporate identity.",
+      "dorukTan": "Our leader who specializes in the development and integration of avionics systems, standing out with innovative solutions.",
+      "utkuMutlu": "Our leader who specializes in the design and optimization of ballistic systems, managing technical calculations and providing analytical solutions.",
+      "ibrahimDincsoy": "Our captain who manages the ITU team, produces creative solutions to technical problems, and stands out with leadership qualities.",
+      "ismailBoler": "Our result-oriented captain at the head of the YTU team, guiding the team with his deep knowledge in engineering.",
+      "kaanOktem": "Our captain who manages software development processes, integrates modern technologies into our projects, and provides creative solutions.",
+      "muhammedEmin": "Our captain who is an expert in data analysis and performance evaluation, managing the team's statistical studies.",
+      "mustafaErgin": "Our captain at the head of the hardware team, specialized in the design and production of electronic systems, known for his detailed approach.",
+      "asimFurkan": "Our member who works on ballistic calculations and simulations, knowledgeable about materials science and production techniques.",
+      "mehmetAffan": "Our team member who works in the field of mechanical design and ballistic simulations, providing solutions with analytical thinking.",
+      "muhennedVelid": "Our valuable member who works on ballistic calculations and simulations, contributing to the team with international experience.",
+      "mehmetAnil": "Our media team member who works in the fields of video production and content development, involved in documenting events.",
+      "omerFarukKaraoglu": "Our team member who specializes in social media management and content strategies, contributing to corporate communication."
+    }
+  }

@@ -19,6 +19,9 @@ import arAdvisors from '../../../public/locales/ar/advisors.json';
 import enTeams from '../../../public/locales/en/team.json'
 import trTeams from '../../../public/locales/tr/team.json'
 import arTeams from '../../../public/locales/ar/team.json'
+import trUS from '../../../public/locales/tr/whoWeAre.json'
+import enUS from '../../../public/locales/en/whoWeAre.json'
+import arUS from '../../../public/locales/ar/whoWeAre.json'
 
 
 
@@ -33,19 +36,23 @@ i18n
         common: enCommon, 
         contact: enContact,
         advisors: enAdvisors,
-        teams: enTeams
+        teams: enTeams,
+        whoWeAre: enUS
       },
       tr: { 
         common: trCommon, 
         contact: trContact,
         advisors: trAdvisors,
-        teams: trTeams
+        teams: trTeams,
+        whoWeAre: trUS
+
       },
       ar: { 
         common: arCommon, 
         contact: arContact,
         advisors: arAdvisors,
-        teams: arTeams
+        teams: arTeams,
+        whoWeAre: arUS
       }
     },
     fallbackLng: 'tr',

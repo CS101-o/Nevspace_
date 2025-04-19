@@ -1,0 +1,22 @@
+{
+    "about": {
+      "whoWeArePage": {
+        "title": "Who We Are",
+        "heroAlt": "About Us Image",
+        "personalTitle": "Personally",
+        "personalContent": "Nevspace Space Technologies, which aims to have a say in the new world order with its technology, conducting research and development in the field of space ecosystem that is becoming increasingly important day by day, and being a candidate to become the architect of the future technology age, was established on January 16, 2020 in Istanbul with the purpose of producing, developing and testing technologies such as propulsion systems, rockets, flight capsules and satellites for the space sector with 100% local resources and national engineering.",
+        "practicalTitle": "In Practice",
+        "practicalContent": "Nevspace reads, researches, develops projects and generates ideas in all areas related to space; it places importance on the mental development of its team on space technologies and especially rocket systems working for scientific purposes, producing new ideas and putting forth applicable projects, and using local resources to produce technology. All income and expenses of Nevspace are regulated with the principle of \"Closed to outside intervention, transparent to authorized institutions and individuals.\"",
+        "spiritualTitle": "Spiritually",
+        "spiritualContent": "Our organization, which works for the happiness and well-being of our nation in particular and all humanity in general, on the way to establishing a new and livable world, has adopted the following principles:",
+        "principles": {
+          "peace": "Not war, but peace",
+          "dialogue": "Not conflict, but dialogue",
+          "justice": "Not double standards, but justice",
+          "equality": "Not superiority, but equality",
+          "fairOrder": "Not exploitation, but fair order",
+          "humanRights": "Not oppression and domination, but human rights and freedom"
+        }
+      }
+    }
+  }

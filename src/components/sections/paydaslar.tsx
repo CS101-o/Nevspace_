@@ -3,7 +3,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import Navigation from '../UI/Navigation';
 import { useI18n, useTranslation } from '../i18n/I18nProvider';
-
+import Logo from "@/components/UI/logo"
 interface Sponsor {
   id: number;
   name: string;
@@ -211,10 +211,16 @@ const SponsorsPage: React.FC = () => {
   return (
     <div ref={pageRef} className="min-h-screen bg-[#040720]">
       <Navigation/>
+      
       {/* Header */}
       <header className="page-header bg-[#0a0d2c] border-b border-gray-800 opacity-0">
-        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 ${isRTL ? 'text-right' : ''}`}>
-          <h1 className="text-3xl font-bold text-white">{t('partners.title')}</h1>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex items-center justify-between">
+            <Logo />
+            <div className={`${isRTL ? 'text-right' : ''}`}>
+              <h1 className="text-3xl font-bold text-white">{t('partners.title')}</h1>
+            </div>
+          </div>
         </div>
       </header>
 

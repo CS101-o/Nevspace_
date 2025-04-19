@@ -1,0 +1,29 @@
+{
+    "title": "Advisors",
+    "heroTitle": "Our Expert Advisors",
+    "heroDescription": "Our advisors who guide our team with their valuable knowledge in technology and management",
+    "heroAltText": "Our Advisors",
+    "visitLinkedIn": "Visit {{name}}'s LinkedIn profile",
+    "categories": {
+      "administrative": "Administrative Committee",
+      "technical": "Technical Committee"
+    },
+    "roles": {
+      "managementConsultant": "Management Consultant",
+      "technicalConsultant": "Technical Consultant",
+      "industryConsultant": "Industry Consultant",
+      "industrialist": "Industrialist / Businessman",
+      "academicDirector": "ITU - ARC General Director"
+    },
+    "descriptions": {
+      "omerFaruk": "An experienced consultant who adds value to our projects with his expertise in strategic management and corporate structuring.",
+      "yusufElgormus": "Our valuable advisor who has extensive experience in financial planning and risk management, guiding corporate processes.",
+      "eyyubCan": "Our advisor who specializes in engineering solutions and technology integration, adding value to projects with innovative approaches.",
+      "halitMirahmetoglu": "Experienced in technology development and system optimization, our advisor who provides technical solutions with an analytical approach.",
+      "muhammedTayyip": "An expert in software architecture and data management, our advisor who adapts modern technologies to our projects.",
+      "omerFarukKoc": "Our advisor who specializes in electronic systems and hardware integration, playing an important role in strengthening technical infrastructure.",
+      "eyupCan": "Can Plastic Mold Manufacturing and Export",
+      "ibrahimOzkol": "Our valuable professor with international experience in engineering sciences, blending academic knowledge with practical applications.",
+      "yusufAta": "Our valuable advisor with extensive experience in industrial production and industry integration, providing practical solutions."
+    }
+  }

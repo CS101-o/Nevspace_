@@ -1,0 +1,22 @@
+{
+    "about": {
+    "whoWeArePage": {
+      "title": "Biz Kimiz",
+      "heroAlt": "Hakkımızda Resmi",
+      "personalTitle": "Şahsen",
+      "personalContent": "Yeni dünya düzeninde teknolojisiyle söz sahibi olmayı amaçlayan, gün geçtikçe daha da önemli hale gelen uzay ekosistemi alanında araştırma ve geliştirme yaparak geleceğin teknoloji çağı mimarı olmaya aday Nevspace Uzay Teknolojileri, %100 yerli kaynak ve milli mühendislikle uzay sektörüne yönelik itki sistemleri, roketler, uçuş kapsülleri ve uydu gibi teknolojilerin üretimi, geliştirilmesi ve test edilmesi amacıyla 16 Ocak 2020 tarihinde İstanbul'da kurulmuştur.",
+      "practicalTitle": "Fiilen",
+      "practicalContent": "Nevspace, uzay ile alakalı her alanda okur, araştırır, proje geliştirir ve fikir üretir; ekibinin uzay teknolojileri ve özellikle bilimsel amaçlı çalışan roket sistemleri üzerine zihnen yetişmesine, yeni fikirler üretip uygulanabilir projeler ortaya koymasına ve yerli kaynakların kullanılarak teknoloji üretilmesine önem verir. Nevspace'in bütün gelir ve giderleri \"Dışarıdan müdahaleye kapalı, yetkili kurum ve kişilere karşı şeffaf\" ilkesiyle düzenlenir.",
+      "spiritualTitle": "Manen",
+      "spiritualContent": "Yeni ve yaşanılabilir bir dünyanın tesis edilmesi yolunda, özelde milletimizin genelde tüm insanlığın saadet ve selameti için çalışmalar yapan kuruluşumuz, aşağıdaki ilkeleri benimsemiştir:",
+      "principles": {
+        "peace": "Savaş değil, barış",
+        "dialogue": "Çatışma değil, diyalog",
+        "justice": "Çifte standart değil, adalet",
+        "equality": "Üstünlük değil, eşitlik",
+        "fairOrder": "Sömürü değil, âdil düzen",
+        "humanRights": "Baskı ve tahakküm değil, insan hakları ve hürriyet"
+      }
+    }
+  }
+}

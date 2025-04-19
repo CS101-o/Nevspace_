@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Mail, X } from 'lucide-react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import ContactForm from './ContactForm';
 import Navigation from '@/components/UI/Navigation';
 import { useI18n, useTranslation } from '../i18n/I18nProvider';
+import Logo from "@/components/UI/logo"
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoibWFwbWFuZ29lc3Rvc3BhY2UiLCJhIjoiY203MmdoeXNmMDkzOTJxcW9vMzFhbzlyaiJ9.tQpj3FAVGzzqumf9YlsVxA';
 
@@ -97,7 +98,7 @@ const ContactPage = () => {
   const isRTL = dir === 'rtl';
 
   // Define office locations with translation keys
-  const officeLocations = [
+  const officeLocations = useMemo( () => [
     {
       id: 'turkey-main',
       name: t('offices.mainOffice'),
@@ -119,7 +120,7 @@ const ContactPage = () => {
       address: ['16 Tarleton Street', 'Manchester', 'M13 9BS'],
       email: 'hello@nevspace.com'
     }
-  ];
+  ], [t]);
 
   const mapContainer = useRef(null);
   const map = useRef(null);
@@ -200,11 +201,17 @@ const ContactPage = () => {
       setMapError(error.message);
       setIsMapLoading(false);
     }
-  }, []);
+  }, [officeLocations]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 to-gray-900 text-white">
       <Navigation/>
+      {/* Header bar with logo */}
+      <div className="bg-[#0B1120]/80 backdrop-blur-md py-3 px-4 border-b border-blue-900/50">
+        <div className="max-w-7xl mx-auto">
+          <Logo />
+        </div>
+      </div>
       <div className={`flex h-screen ${isRTL ? 'flex-row-reverse' : ''}`}>
         {/* Contact Information Side */}
         <div className="w-2/5 overflow-y-auto px-8 py-12">

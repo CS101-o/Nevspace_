@@ -12,6 +12,7 @@ import { Section } from './MissionSections'
 import { useScrollDirection } from '../Hooks/UseScrollDirection'
 import { useI18n, useTranslation } from '../i18n/I18nProvider'
 import LanguageSwitcher from '../UI/LanguageSwitcher'
+import Logo from '../UI/logo'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -129,19 +130,7 @@ export default function DesktopLayout({
         <div className="max-w-7xl mx-auto px-4">
           <div className="mission-nav flex items-center justify-center h-24 relative">
             {/* Logo */}
-            <div className={`logo-container absolute ${isRTL ? 'right-4' : 'left-4'}`}>
-              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity duration-300">
-                <div className="relative w-[140px] h-[45px]">
-                  <Image
-                    src="/images/logo.svg"
-                    alt="Nevspace Logo"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
-              </Link>
-            </div>
+            <Logo className={`absolute ${isRTL ? 'right-4' : 'left-4'}`} />
             
             {/* Navigation Links - Now Centered */}
             <div className="flex items-center justify-center space-x-8">
